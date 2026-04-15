@@ -5,112 +5,99 @@ import { ChevronRight } from 'lucide-react'
 export default function Hero() {
   return (
     <section className="min-h-screen bg-background flex items-center relative overflow-hidden pt-20">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-background opacity-60"></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
+      {/* Subtle background element */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left Content */}
-          <div>
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-              <span className="text-primary text-sm font-bold tracking-wide uppercase">Nouveauté 2024</span>
-            </div>
+          <div className="max-w-2xl">
+            {/* Subtitle */}
+            <p className="text-muted-foreground text-sm font-rajdhani uppercase tracking-widest mb-6">
+              Collection Premium
+            </p>
 
-            {/* Heading */}
-            <h1 className="font-rajdhani text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+            {/* Main Heading */}
+            <h1 className="font-rajdhani text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-8">
               Meubles &<br />
               <span className="text-primary">Électroménagers</span>
+              <br />
+              <span className="text-muted-foreground font-normal text-lg lg:text-2xl">de qualité</span>
             </h1>
 
             {/* Description */}
-            <p className="text-muted-foreground text-base lg:text-lg leading-relaxed max-w-xl mb-8">
-              Découvrez notre sélection de meubles de qualité et d&apos;électroménagers dernière génération pour transformer votre maison en un espace de confort et de modernité.
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mb-12">
+              Découvrez notre sélection curatée de meubles et d&apos;électroménagers haut de gamme pour transformer votre espace de vie.
             </p>
 
-            {/* CTAs */}
-            <div className="flex gap-4 flex-wrap mb-12">
-              <button className="btn-primary flex items-center gap-2">
-                Découvrir
+            {/* CTA Buttons */}
+            <div className="flex gap-6 items-center flex-wrap">
+              <button className="btn-primary flex items-center gap-3">
+                Découvrir la collection
                 <ChevronRight size={20} />
               </button>
-              <button className="px-6 py-3 bg-muted text-foreground rounded-lg font-semibold hover:bg-border transition-colors">
-                En savoir plus
-              </button>
+              <a href="#" className="text-primary font-semibold hover:text-secondary transition-colors flex items-center gap-2">
+                Voir le catalogue
+                <ChevronRight size={18} />
+              </a>
             </div>
 
             {/* Stats */}
-            <div className="flex gap-8">
-              <div className="flex flex-col">
-                <span className="font-rajdhani text-4xl font-bold text-foreground leading-none">
-                  2500<span className="text-primary">+</span>
-                </span>
-                <span className="text-sm text-muted-foreground uppercase tracking-wide mt-2">Produits</span>
+            <div className="flex gap-16 mt-20 pt-12 border-t border-border">
+              <div>
+                <p className="font-rajdhani text-4xl font-bold text-foreground mb-2">2500+</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-widest">Produits</p>
               </div>
-              <div className="flex flex-col">
-                <span className="font-rajdhani text-4xl font-bold text-foreground leading-none">
-                  50K<span className="text-primary">+</span>
-                </span>
-                <span className="text-sm text-muted-foreground uppercase tracking-wide mt-2">Clients</span>
+              <div>
+                <p className="font-rajdhani text-4xl font-bold text-foreground mb-2">50K+</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-widest">Clients</p>
+              </div>
+              <div>
+                <p className="font-rajdhani text-4xl font-bold text-foreground mb-2">2 ans</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-widest">Garantie</p>
               </div>
             </div>
           </div>
 
           {/* Right Visual */}
-          <div className="relative flex justify-center items-center h-96 lg:h-full min-h-96">
-            {/* Main Card */}
-            <div className="card p-8 lg:p-10 w-72 lg:w-80 relative shadow-md hover:shadow-lg transition-shadow animate-float">
-              <div className="absolute -top-4 right-6 bg-primary text-primary-foreground text-sm font-bold px-4 py-2 rounded-full shadow-lg">
-                -35%
-              </div>
-              
-              <div className="text-6xl lg:text-7xl text-center mb-6">🛋️</div>
-              <h3 className="font-rajdhani text-2xl lg:text-3xl font-bold text-foreground text-center mb-2">Canapé Luxe</h3>
-              <p className="text-sm text-muted-foreground text-center mb-6">Premium Edition</p>
-              
-              <div className="text-center space-y-3">
-                <div>
-                  <span className="font-rajdhani text-3xl lg:text-4xl font-bold text-primary">4,299 DZD</span>
-                  <span className="text-sm text-muted-foreground line-through ml-3">6,599 DZD</span>
+          <div className="relative hidden lg:flex items-center justify-center h-full">
+            {/* Featured Product */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl blur-xl"></div>
+              <div className="card p-12 relative backdrop-blur-sm">
+                <div className="text-center">
+                  <div className="text-7xl mb-8">🛋️</div>
+                  <h3 className="font-rajdhani text-3xl font-bold text-foreground mb-2">Canapé Élégant</h3>
+                  <p className="text-muted-foreground text-sm mb-6">Design contemporain</p>
+                  
+                  <div className="flex items-center justify-center gap-4 mb-8">
+                    <span className="font-rajdhani text-4xl font-bold text-primary">4 299 DZD</span>
+                    <span className="text-muted-foreground line-through text-lg">6 599 DZD</span>
+                  </div>
+                  
+                  <button className="btn-primary w-full justify-center">
+                    Ajouter au panier
+                  </button>
                 </div>
-                <button className="w-full btn-primary">
-                  Ajouter au Panier
-                </button>
               </div>
             </div>
 
-            {/* Floating Cards */}
-            <div className="hidden lg:flex absolute top-1/4 -left-24 card p-4 items-center gap-4 animate-float shadow-md hover:shadow-lg transition-shadow" style={{animationDelay: '1s'}}>
-              <span className="text-4xl">📺</span>
-              <div>
-                <p className="text-base text-foreground font-bold">TV 55"</p>
-                <p className="text-sm text-primary font-bold">1,899 DZD</p>
-              </div>
+            {/* Floating badges */}
+            <div className="absolute top-12 -left-20 card p-5 shadow-lg hover:shadow-xl transition-shadow">
+              <p className="font-rajdhani font-bold text-foreground mb-1">Premium</p>
+              <p className="text-xs text-muted-foreground">Collection 2024</p>
             </div>
 
-            <div className="hidden lg:flex absolute bottom-1/4 -right-24 card p-4 items-center gap-4 animate-float shadow-md hover:shadow-lg transition-shadow" style={{animationDelay: '2s'}}>
-              <span className="text-4xl">🧊</span>
-              <div>
-                <p className="text-base text-foreground font-bold">Réfrigérateur</p>
-                <p className="text-sm text-primary font-bold">2,599 DZD</p>
-              </div>
+            <div className="absolute bottom-20 -right-16 card p-5 shadow-lg hover:shadow-xl transition-shadow">
+              <p className="font-rajdhani font-bold text-primary mb-1">-35%</p>
+              <p className="text-xs text-muted-foreground">Soldes spéciales</p>
             </div>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-12px); }
-        }
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   )
 }

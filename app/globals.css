@@ -2,47 +2,40 @@
 @import 'tw-animate-css';
 
 @theme inline {
-  /* Brand Colors - HME Logo Inspired */
-  --color-green-primary: #2d8659;
-  --color-green-dark: #1f5e40;
-  --color-green-light: #4caf73;
-  --color-green-lighter: #a8d5ba;
+  /* Brand Colors from HME Logo */
+  --color-primary: #2d8659;
+  --color-primary-dark: #1f5e40;
+  --color-accent: #4caf73;
   
-  /* Neutrals */
-  --color-dark: #2e3140;
-  --color-dark-bg: #3a3f4f;
-  --color-grey-50: #fafaf9;
-  --color-grey-100: #f5f5f4;
-  --color-grey-200: #e7e5e4;
-  --color-grey-300: #d6d3d1;
-  --color-grey-400: #a8a29e;
+  /* Neutrals - Elegant & Minimal */
+  --color-bg-dark: #f9f7f4;
+  --color-bg-light: #fefbf8;
+  --color-grey-100: #ede8e3;
+  --color-grey-200: #d9d4cf;
+  --color-grey-300: #c5beb7;
+  --color-grey-400: #a39d97;
+  --color-text-dark: #1a1a1a;
+  --color-text-muted: #5d5d5d;
   --color-white: #ffffff;
   
-  /* Text */
-  --color-text-dark: #1f2937;
-  --color-text-muted: #6b7280;
-  
-  /* Semantic Tokens */
-  --color-background: #fafaf9;
-  --color-foreground: #1f2937;
-  --color-card: #ffffff;
-  --color-card-foreground: #1f2937;
+  /* Semantic */
+  --color-background: #f9f7f4;
+  --color-foreground: #1a1a1a;
+  --color-card: #fefbf8;
+  --color-card-foreground: #1a1a1a;
   --color-primary: #2d8659;
   --color-primary-foreground: #ffffff;
   --color-secondary: #1f5e40;
   --color-secondary-foreground: #ffffff;
-  --color-muted: #e7e5e4;
-  --color-muted-foreground: #6b7280;
+  --color-muted: #ede8e3;
+  --color-muted-foreground: #5d5d5d;
   --color-accent: #4caf73;
   --color-accent-foreground: #ffffff;
-  --color-border: #e7e5e4;
+  --color-border: #e0dbd6;
   --color-input: #ffffff;
   --color-ring: #2d8659;
   
-  /* UI */
-  --radius: 8px;
-  
-  /* Font Stack */
+  --radius: 6px;
   --font-sans: var(--font-nunito);
   --font-heading: var(--font-rajdhani);
 }
@@ -62,32 +55,26 @@
     font-family: theme(fontFamily.sans);
     overflow-x: hidden;
     scroll-behavior: smooth;
+    letter-spacing: 0.3px;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 700;
-  }
-  
-  .font-rajdhani {
-    font-family: var(--font-heading);
-  }
-  
-  .font-nunito {
-    font-family: var(--font-sans);
+    letter-spacing: -0.5px;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-secondary transition-colors duration-200;
+    @apply px-8 py-3 bg-primary text-white rounded font-semibold hover:bg-secondary transition-colors duration-300;
   }
   
   .btn-secondary {
-    @apply px-6 py-3 bg-grey-200 text-foreground rounded-lg font-semibold hover:bg-grey-300 transition-colors duration-200;
+    @apply px-8 py-3 border border-foreground text-foreground rounded font-semibold hover:bg-foreground hover:text-white transition-all duration-300;
   }
   
   .card {
-    @apply bg-card text-card-foreground rounded-lg border border-border;
+    @apply bg-card rounded border border-border;
   }
 }
