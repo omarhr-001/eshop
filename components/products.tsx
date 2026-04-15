@@ -152,8 +152,8 @@ export default function Products() {
 
               {/* Price */}
               <div className="flex items-baseline gap-3 mb-4">
-                <span className="font-rajdhani text-primary text-xl font-bold">{product.price.toLocaleString()} DZD</span>
-                <span className="text-muted-foreground text-sm line-through">{product.oldPrice.toLocaleString()} DZD</span>
+                <span className="font-rajdhani text-primary text-xl font-bold">{product.price.toLocaleString()} DTN</span>
+                <span className="text-muted-foreground text-sm line-through">{product.oldPrice.toLocaleString()} DTN</span>
               </div>
 
               {/* Add to Cart Button */}

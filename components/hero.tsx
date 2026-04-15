@@ -74,8 +74,8 @@ export default function Hero() {
                   <p className="text-muted-foreground text-sm mb-6">Design contemporain</p>
                   
                   <div className="flex items-center justify-center gap-4 mb-8">
-                    <span className="font-rajdhani text-4xl font-bold text-primary">4 299 DZD</span>
-                    <span className="text-muted-foreground line-through text-lg">6 599 DZD</span>
+                    <span className="font-rajdhani text-4xl font-bold text-primary">4 299 DTN</span>
+                    <span className="text-muted-foreground line-through text-lg">6 599 DTN</span>
                   </div>
                   
                   <button className="btn-primary w-full justify-center">

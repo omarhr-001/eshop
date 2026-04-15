@@ -76,8 +76,8 @@ export default function PromoSection() {
         {/* Right Products */}
         <div className="flex flex-col gap-4 w-full lg:w-auto">
           {[
-            { emoji: '🛋️', name: 'Canapé Premium', price: '2,999 DZD', oldPrice: '4,799 DZD' },
-            { emoji: '📺', name: 'TV OLED 77"', price: '9,999 DZD', oldPrice: '14,999 DZD' },
+            { emoji: '🛋️', name: 'Canapé Premium', price: '2,999 DTN', oldPrice: '4,799 DTN' },
+            { emoji: '📺', name: 'TV OLED 77"', price: '9,999 DTN', oldPrice: '14,999 DTN' },
           ].map((prod, i) => (
             <div
               key={i}

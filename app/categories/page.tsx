@@ -103,7 +103,7 @@ export default function CategoriesPage() {
                   <h3 className="font-rajdhani font-bold text-foreground mb-6">Gamme de prix</h3>
                   <div className="space-y-4">
                     <div>
-                      <label className="text-sm text-muted-foreground mb-2 block">Min: {priceRange.min.toLocaleString()} DZD</label>
+                      <label className="text-sm text-muted-foreground mb-2 block">Min: {priceRange.min.toLocaleString()} DTN</label>
                       <input
                         type="range"
                         min="0"
@@ -120,7 +120,7 @@ export default function CategoriesPage() {
                       />
                     </div>
                     <div>
-                      <label className="text-sm text-muted-foreground mb-2 block">Max: {priceRange.max.toLocaleString()} DZD</label>
+                      <label className="text-sm text-muted-foreground mb-2 block">Max: {priceRange.max.toLocaleString()} DTN</label>
                       <input
                         type="range"
                         min="0"
@@ -197,10 +197,10 @@ export default function CategoriesPage() {
 
                       <div className="flex items-baseline gap-3 mb-6">
                         <span className="font-rajdhani text-primary text-2xl font-bold">
-                          {product.price.toLocaleString()} DZD
+                          {product.price.toLocaleString()} DTN
                         </span>
                         <span className="text-muted-foreground text-sm line-through">
-                          {product.oldPrice.toLocaleString()} DZD
+                          {product.oldPrice.toLocaleString()} DTN
                         </span>
                       </div>
 
