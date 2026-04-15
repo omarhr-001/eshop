@@ -1,56 +1,46 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
-
-:root {
+@theme inline {
   /* Brand Colors - HME Logo Inspired */
-  --green-primary: #2d8659;
-  --green-dark: #1f5e40;
-  --green-light: #4caf73;
-  --green-lighter: #a8d5ba;
+  --color-green-primary: #2d8659;
+  --color-green-dark: #1f5e40;
+  --color-green-light: #4caf73;
+  --color-green-lighter: #a8d5ba;
   
   /* Neutrals */
-  --dark: #2e3140;
-  --dark-bg: #3a3f4f;
-  --grey-100: #f8f8f7;
-  --grey-200: #efe9e3;
-  --grey-300: #ddd3c8;
-  --grey-400: #b8a896;
-  --white: #ffffff;
+  --color-dark: #2e3140;
+  --color-dark-bg: #3a3f4f;
+  --color-grey-100: #f8f8f7;
+  --color-grey-200: #efe9e3;
+  --color-grey-300: #ddd3c8;
+  --color-grey-400: #b8a896;
+  --color-white: #ffffff;
   
   /* Text */
-  --text-dark: #1a1a1a;
-  --text-muted: #666666;
+  --color-text-dark: #1a1a1a;
+  --color-text-muted: #666666;
+  
+  /* Semantic Tokens */
+  --color-background: #f8f8f7;
+  --color-foreground: #1a1a1a;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+  --color-primary: #2d8659;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #2e3140;
+  --color-secondary-foreground: #ffffff;
+  --color-muted: #ddd3c8;
+  --color-muted-foreground: #666666;
+  --color-accent: #4caf73;
+  --color-accent-foreground: #ffffff;
+  --color-border: #efe9e3;
+  --color-input: #ffffff;
+  --color-ring: #2d8659;
   
   /* UI */
   --radius: 12px;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
   
-  /* Design Tokens */
-  --background: var(--grey-100);
-  --foreground: var(--text-dark);
-  --card: var(--white);
-  --card-foreground: var(--text-dark);
-  --primary: var(--green-primary);
-  --primary-foreground: var(--white);
-  --secondary: var(--dark);
-  --secondary-foreground: var(--white);
-  --muted: var(--grey-300);
-  --muted-foreground: var(--text-muted);
-  --accent: var(--green-light);
-  --accent-foreground: var(--white);
-  --border: var(--grey-200);
-  --input: var(--white);
-  --ring: var(--green-primary);
-}
-
-@theme inline {
+  /* Font Stack */
   --font-sans: var(--font-nunito);
   --font-rajdhani: var(--font-rajdhani);
 }
@@ -61,11 +51,11 @@
   }
   
   html {
-    @apply bg-grey-100;
+    @apply bg-background;
   }
   
   body {
-    @apply bg-grey-100 text-text-dark font-nunito;
+    @apply bg-background text-foreground font-sans;
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
