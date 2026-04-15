@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Brand Colors - HME Logo Inspired */
+  --green-primary: #2d8659;
+  --green-dark: #1f5e40;
+  --green-light: #4caf73;
+  --green-lighter: #a8d5ba;
+  
+  /* Neutrals */
+  --dark: #2e3140;
+  --dark-bg: #3a3f4f;
+  --grey-100: #f8f8f7;
+  --grey-200: #efe9e3;
+  --grey-300: #ddd3c8;
+  --grey-400: #b8a896;
+  --white: #ffffff;
+  
+  /* Text */
+  --text-dark: #1a1a1a;
+  --text-muted: #666666;
+  
+  /* UI */
+  --radius: 12px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  
+  /* Design Tokens */
+  --background: var(--grey-100);
+  --foreground: var(--text-dark);
+  --card: var(--white);
+  --card-foreground: var(--text-dark);
+  --primary: var(--green-primary);
+  --primary-foreground: var(--white);
+  --secondary: var(--dark);
+  --secondary-foreground: var(--white);
+  --muted: var(--grey-300);
+  --muted-foreground: var(--text-muted);
+  --accent: var(--green-light);
+  --accent-foreground: var(--white);
+  --border: var(--grey-200);
+  --input: var(--white);
+  --ring: var(--green-primary);
+}
+
+@theme inline {
+  --font-sans: var(--font-nunito);
+  --font-rajdhani: var(--font-rajdhani);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html {
+    @apply bg-grey-100;
+  }
+  
+  body {
+    @apply bg-grey-100 text-text-dark font-nunito;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
+  .font-rajdhani {
+    font-family: var(--font-rajdhani);
+  }
+  
+  .font-nunito {
+    font-family: var(--font-nunito);
+  }
+}
