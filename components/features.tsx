@@ -25,11 +25,11 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="max-w-6xl mx-auto px-6 lg:px-12 py-20 bg-stone-50">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-background">
       {/* Header */}
       <div className="text-center mb-16">
-        <span className="text-sm font-bold text-green-700 tracking-widest uppercase">Avantages</span>
-        <h2 className="font-rajdhani text-5xl font-bold text-slate-900 mt-2">Pourquoi nous choisir</h2>
+        <span className="text-sm font-bold text-primary tracking-widest uppercase">Avantages</span>
+        <h2 className="font-rajdhani text-5xl font-bold text-foreground mt-2">Pourquoi nous choisir</h2>
       </div>
 
       {/* Grid */}
@@ -37,15 +37,15 @@ export default function Features() {
         {features.map((feature, i) => (
           <div
             key={i}
-            className="bg-white border border-stone-200 rounded-2xl p-8 transition-all hover:border-green-700 hover:-translate-y-1 hover:shadow-lg"
+            className="card p-8 transition-all hover:border-primary hover:shadow-md hover:translate-y-[-4px]"
           >
-            <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-3xl mb-6">
+            <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-3xl mb-6">
               {feature.icon}
             </div>
-            <h3 className="font-rajdhani text-lg font-bold text-slate-900 mb-2">
+            <h3 className="font-rajdhani text-lg font-bold text-foreground mb-2">
               {feature.title}
             </h3>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               {feature.desc}
             </p>
           </div>

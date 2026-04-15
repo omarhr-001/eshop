@@ -16,8 +16,8 @@ const nunito = Nunito({
 })
 
 export const metadata: Metadata = {
-  title: 'HME – Hamroun Meuble & Electromenager',
-  description: 'Meubles et électroménagers de qualité pour votre maison',
+  title: 'HME – Meubles & Électroménagers de Qualité',
+  description: 'Découvrez notre sélection premium de meubles et électroménagers pour transformer votre maison',
   generator: 'v0.app',
 }
 
@@ -27,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${rajdhani.variable} ${nunito.variable} bg-stone-50`}>
-      <body className="bg-stone-50 text-slate-900 antialiased">
+    <html lang="fr" className={`${rajdhani.variable} ${nunito.variable} bg-background`}>
+      <body className="bg-background text-foreground antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
