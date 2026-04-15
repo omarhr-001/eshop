@@ -29,66 +29,66 @@ export default function PromoSection() {
   }, [])
 
   return (
-    <section className="bg-dark relative overflow-hidden py-16 px-12">
+    <section className="bg-secondary relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-green/20 via-transparent to-green/10 opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-primary/10 opacity-50"></div>
 
-      <div className="max-w-6xl mx-auto relative z-10 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
         {/* Left Content */}
         <div className="max-w-md">
-          <div className="inline-block bg-green/20 border border-green px-3.5 py-1.25 rounded-full mb-5">
-            <span className="text-green text-2.75 font-bold letter-spacing-1 uppercase">Offre limitée</span>
+          <div className="inline-block bg-primary/20 border border-primary px-4 py-2 rounded-full mb-5">
+            <span className="text-primary text-sm font-bold tracking-widest uppercase">Offre limitée</span>
           </div>
 
           <h2 className="font-rajdhani text-5xl font-bold text-white leading-tight mb-4">
             Soldes<br />
-            <span className="text-green">Exceptionnels</span>
+            <span className="text-accent">Exceptionnels</span>
           </h2>
 
-          <p className="text-white/60 text-base leading-relaxed mb-8">
+          <p className="text-white/70 text-base leading-relaxed mb-8">
             Profitez de réductions jusqu&apos;à -50% sur une sélection de produits. Offre valide pendant le compte à rebours.
           </p>
 
           {/* Timer */}
-          <div className="flex gap-4 mb-8">
+          <div className="flex gap-4 mb-8 flex-wrap">
             {[
               { value: time.days, label: 'Jours' },
               { value: time.hours, label: 'Heures' },
               { value: time.minutes, label: 'Minutes' },
               { value: time.seconds, label: 'Secondes' },
             ].map((timer, i) => (
-              <div key={i} className="bg-green/12 border border-green/30 rounded-2.5 p-3 text-center min-w-16">
-                <p className="font-rajdhani text-3xl font-bold text-white leading-none">
+              <div key={i} className="bg-primary/20 border border-primary/30 rounded-lg p-3 text-center min-w-16">
+                <p className="font-rajdhani text-2xl font-bold text-white leading-none">
                   {String(timer.value).padStart(2, '0')}
                 </p>
-                <p className="text-2.5 text-green letter-spacing-1 uppercase mt-0.5">
+                <p className="text-xs text-primary/80 tracking-widest uppercase mt-1">
                   {timer.label[0]}
                 </p>
               </div>
             ))}
           </div>
 
-          <button className="bg-green hover:bg-green-dark text-white border-0 rounded-xl px-8 py-3.5 font-nunito text-base font-bold cursor-pointer transition-all">
+          <button className="btn-primary">
             Acheter maintenant
           </button>
         </div>
 
         {/* Right Products */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 w-full lg:w-auto">
           {[
             { emoji: '🛋️', name: 'Canapé Premium', price: '2,999 DZD', oldPrice: '4,799 DZD' },
             { emoji: '📺', name: 'TV OLED 77"', price: '9,999 DZD', oldPrice: '14,999 DZD' },
           ].map((prod, i) => (
             <div
               key={i}
-              className="bg-white/5 border border-green/25 rounded-4 px-6 py-5 flex items-center gap-5 min-w-72 hover:-translate-x-1.5 transition-transform cursor-pointer"
+              className="bg-white/10 border border-primary/25 rounded-lg px-6 py-5 flex items-center gap-5 hover:bg-white/15 transition-colors cursor-pointer"
             >
               <span className="text-5xl flex-shrink-0">{prod.emoji}</span>
               <div>
                 <p className="text-white font-bold text-base">{prod.name}</p>
                 <div className="flex gap-2 mt-1">
-                  <span className="text-green font-bold text-sm">{prod.price}</span>
-                  <span className="text-white/40 line-through text-2.75">{prod.oldPrice}</span>
+                  <span className="text-accent font-bold text-sm">{prod.price}</span>
+                  <span className="text-white/40 line-through text-xs">{prod.oldPrice}</span>
                 </div>
               </div>
             </div>

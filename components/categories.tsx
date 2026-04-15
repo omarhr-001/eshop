@@ -13,16 +13,16 @@ const categories = [
 
 export default function Categories() {
   return (
-    <section className="max-w-6xl mx-auto px-6 lg:px-12 py-20 bg-stone-50">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-background">
       {/* Header */}
       <div className="flex items-end justify-between mb-12">
         <div>
-          <span className="text-sm font-bold text-green-700 tracking-widest uppercase">Catégories</span>
-          <h2 className="font-rajdhani text-5xl font-bold text-slate-900 mt-2">Explorez par catégorie</h2>
+          <span className="text-sm font-bold text-primary tracking-widest uppercase">Catégories</span>
+          <h2 className="font-rajdhani text-5xl font-bold text-foreground mt-2">Explorez par catégorie</h2>
         </div>
-        <a href="#" className="text-green-700 text-sm font-bold flex items-center gap-2 hover:gap-3 transition-all">
+        <a href="#" className="text-primary hover:text-secondary font-bold text-sm flex items-center gap-2 transition-colors">
           Voir tout
-          <ChevronRight className="w-4 h-4" />
+          <ChevronRight size={18} />
         </a>
       </div>
 
@@ -31,13 +31,13 @@ export default function Categories() {
         {categories.map((cat, i) => (
           <div
             key={i}
-            className="bg-white border border-stone-200 rounded-2xl px-4 py-6 text-center cursor-pointer transition-all hover:border-green-700 hover:-translate-y-1 hover:shadow-lg flex flex-col items-center gap-3 group"
+            className="card p-6 text-center cursor-pointer transition-all hover:border-primary hover:shadow-md hover:translate-y-[-4px] flex flex-col items-center gap-3 group"
           >
-            <div className="w-16 h-16 bg-stone-100 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-green-100 transition-colors">
+            <div className="w-16 h-16 bg-muted rounded-xl flex items-center justify-center text-3xl group-hover:bg-primary/10 transition-colors">
               {cat.icon}
             </div>
-            <h3 className="text-base font-bold text-slate-900">{cat.name}</h3>
-            <p className="text-sm text-slate-600">{cat.count} produits</p>
+            <h3 className="text-base font-bold text-foreground">{cat.name}</h3>
+            <p className="text-sm text-muted-foreground">{cat.count} produits</p>
           </div>
         ))}
       </div>

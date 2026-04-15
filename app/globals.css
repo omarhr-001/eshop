@@ -47,7 +47,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   
   html {
@@ -60,11 +60,29 @@
     scroll-behavior: smooth;
   }
   
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-rajdhani font-bold;
+  }
+  
   .font-rajdhani {
     font-family: var(--font-rajdhani);
   }
   
   .font-nunito {
     font-family: var(--font-nunito);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-secondary transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-grey-200 text-foreground rounded-lg font-semibold hover:bg-grey-300 transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-card text-card-foreground rounded-lg border border-border;
   }
 }

@@ -13,7 +13,7 @@ const products = [
     price: 3999,
     oldPrice: 5999,
     badge: 'Promo',
-    badgeColor: 'red'
+    badgeColor: 'primary'
   },
   {
     icon: '📺',
@@ -24,7 +24,7 @@ const products = [
     price: 12999,
     oldPrice: 16999,
     badge: 'Hot',
-    badgeColor: 'dark'
+    badgeColor: 'secondary'
   },
   {
     icon: '🧊',
@@ -35,7 +35,7 @@ const products = [
     price: 8499,
     oldPrice: 11999,
     badge: 'Nouveau',
-    badgeColor: 'dark'
+    badgeColor: 'secondary'
   },
   {
     icon: '🛏️',
@@ -46,7 +46,7 @@ const products = [
     price: 7999,
     oldPrice: 11999,
     badge: 'Stock Limité',
-    badgeColor: 'red'
+    badgeColor: 'primary'
   },
   {
     icon: '🍽️',
@@ -57,7 +57,7 @@ const products = [
     price: 3499,
     oldPrice: 5299,
     badge: 'Promo',
-    badgeColor: 'red'
+    badgeColor: 'primary'
   },
   {
     icon: '🪑',
@@ -68,7 +68,7 @@ const products = [
     price: 4999,
     oldPrice: 7299,
     badge: 'Nouveau',
-    badgeColor: 'dark'
+    badgeColor: 'secondary'
   },
   {
     icon: '🛋️',
@@ -90,7 +90,7 @@ const products = [
     price: 899,
     oldPrice: 1299,
     badge: 'Promo',
-    badgeColor: 'red'
+    badgeColor: 'primary'
   },
 ]
 
@@ -98,64 +98,67 @@ export default function Products() {
   const [favorites, setFavorites] = useState<Record<number, boolean>>({})
 
   return (
-    <section className="bg-white py-20 px-6 lg:px-12">
+    <section className="bg-card py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-end justify-between mb-12">
           <div>
-            <span className="text-green-700 text-sm font-bold uppercase tracking-widest block mb-2">Meilleures offres</span>
-            <h2 className="font-rajdhani text-5xl font-bold text-slate-900">Produits Populaires</h2>
+            <span className="text-primary text-sm font-bold uppercase tracking-widest block mb-2">Meilleures offres</span>
+            <h2 className="font-rajdhani text-5xl font-bold text-foreground">Produits Populaires</h2>
           </div>
-          <a href="#" className="text-green-700 hover:text-green-800 font-bold text-sm flex items-center gap-2 transition-colors">
+          <a href="#" className="text-primary hover:text-secondary font-bold text-sm flex items-center gap-2 transition-colors">
             Voir tous
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight size={18} />
           </a>
         </div>
+        
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, i) => (
-            <div key={i} className="bg-white border border-stone-200 rounded-xl p-5 hover:border-stone-300 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+            <div key={i} className="card p-5 hover:shadow-md hover:border-primary transition-all duration-300 group cursor-pointer">
               {/* Product Header */}
               <div className="flex justify-between items-start mb-4">
                 <span className="text-4xl">{product.icon}</span>
                 <button
                   onClick={() => setFavorites(prev => ({ ...prev, [i]: !prev[i] }))}
-                  className="bg-stone-100 hover:bg-green-700 hover:scale-110 border border-stone-300 rounded-full p-2.5 transition-all"
+                  className="bg-muted hover:bg-primary hover:scale-110 rounded-full p-2.5 transition-all"
                 >
-                  <Heart className={`w-5 h-5 ${favorites[i] ? 'fill-current text-green-700' : 'text-slate-600'}`} />
+                  <Heart className={`w-5 h-5 ${favorites[i] ? 'fill-current text-primary' : 'text-muted-foreground'}`} />
                 </button>
               </div>
 
               {/* Badge */}
               {product.badge && (
                 <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-3 ${
-                  product.badgeColor === 'red' ? 'bg-red-100 text-red-600' : 'bg-stone-200 text-slate-900'
+                  product.badgeColor === 'primary' 
+                    ? 'bg-primary/10 text-primary' 
+                    : 'bg-secondary/10 text-secondary'
                 }`}>
                   {product.badge}
                 </div>
               )}
 
               {/* Product Info */}
-              <p className="text-sm text-slate-600 mb-1">{product.brand}</p>
-              <h3 className="font-rajdhani font-bold text-slate-900 text-base mb-1">{product.name}</h3>
-              <p className="text-sm text-slate-600 mb-4">{product.desc}</p>
+              <p className="text-sm text-muted-foreground mb-1">{product.brand}</p>
+              <h3 className="font-rajdhani font-bold text-foreground text-base mb-1">{product.name}</h3>
+              <p className="text-sm text-muted-foreground mb-4">{product.desc}</p>
 
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(product.rating)].map((_, j) => (
-                  <span key={j} className="text-green-700 text-base">★</span>
+                  <span key={j} className="text-primary text-base">★</span>
                 ))}
               </div>
 
               {/* Price */}
               <div className="flex items-baseline gap-3 mb-4">
-                <span className="font-rajdhani text-green-700 text-xl font-bold">{product.price.toLocaleString()} DZD</span>
-                <span className="text-slate-600 text-sm line-through">{product.oldPrice.toLocaleString()} DZD</span>
+                <span className="font-rajdhani text-primary text-xl font-bold">{product.price.toLocaleString()} DZD</span>
+                <span className="text-muted-foreground text-sm line-through">{product.oldPrice.toLocaleString()} DZD</span>
               </div>
 
               {/* Add to Cart Button */}
-              <button className="w-full bg-green-700 hover:bg-green-800 text-white rounded-lg py-2.5 flex items-center justify-center gap-2 font-bold text-sm transition-all opacity-0 group-hover:opacity-100">
-                <Plus className="w-5 h-5" />
+              <button className="w-full bg-primary hover:bg-secondary text-primary-foreground rounded-lg py-2.5 flex items-center justify-center gap-2 font-bold text-sm transition-all opacity-0 group-hover:opacity-100">
+                <Plus size={18} />
                 Ajouter
               </button>
             </div>
