@@ -1,3 +1,4 @@
+@import 'tailwindcss';
 @import 'tw-animate-css';
 
 @theme inline {
@@ -10,66 +11,70 @@
   /* Neutrals */
   --color-dark: #2e3140;
   --color-dark-bg: #3a3f4f;
-  --color-grey-100: #f8f8f7;
-  --color-grey-200: #efe9e3;
-  --color-grey-300: #ddd3c8;
-  --color-grey-400: #b8a896;
+  --color-grey-50: #fafaf9;
+  --color-grey-100: #f5f5f4;
+  --color-grey-200: #e7e5e4;
+  --color-grey-300: #d6d3d1;
+  --color-grey-400: #a8a29e;
   --color-white: #ffffff;
   
   /* Text */
-  --color-text-dark: #1a1a1a;
-  --color-text-muted: #666666;
+  --color-text-dark: #1f2937;
+  --color-text-muted: #6b7280;
   
   /* Semantic Tokens */
-  --color-background: #f8f8f7;
-  --color-foreground: #1a1a1a;
+  --color-background: #fafaf9;
+  --color-foreground: #1f2937;
   --color-card: #ffffff;
-  --color-card-foreground: #1a1a1a;
+  --color-card-foreground: #1f2937;
   --color-primary: #2d8659;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #2e3140;
+  --color-secondary: #1f5e40;
   --color-secondary-foreground: #ffffff;
-  --color-muted: #ddd3c8;
-  --color-muted-foreground: #666666;
+  --color-muted: #e7e5e4;
+  --color-muted-foreground: #6b7280;
   --color-accent: #4caf73;
   --color-accent-foreground: #ffffff;
-  --color-border: #efe9e3;
+  --color-border: #e7e5e4;
   --color-input: #ffffff;
   --color-ring: #2d8659;
   
   /* UI */
-  --radius: 12px;
+  --radius: 8px;
   
   /* Font Stack */
   --font-sans: var(--font-nunito);
-  --font-rajdhani: var(--font-rajdhani);
+  --font-heading: var(--font-rajdhani);
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: theme(colors.border);
   }
   
   html {
-    @apply bg-background;
+    background-color: theme(colors.background);
   }
   
   body {
-    @apply bg-background text-foreground font-sans;
+    background-color: theme(colors.background);
+    color: theme(colors.foreground);
+    font-family: theme(fontFamily.sans);
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-rajdhani font-bold;
+    font-family: var(--font-heading);
+    font-weight: 700;
   }
   
   .font-rajdhani {
-    font-family: var(--font-rajdhani);
+    font-family: var(--font-heading);
   }
   
   .font-nunito {
-    font-family: var(--font-nunito);
+    font-family: var(--font-sans);
   }
 }
 
